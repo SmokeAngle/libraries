@@ -22,6 +22,8 @@ function ChipsDistributionCalculator(kdata, accuracyFactor, range, days) {
      * 计算筹码分布的交易天数
      */
     this.tradingdays = days;
+
+    return this;
 }
 /**
  * 计算分布及相关指标
