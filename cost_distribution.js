@@ -3,9 +3,9 @@
  * @param {Array.<Array.<string>>} kdata K图数据 [date,open,close,high,low,volume,amount,amplitude,turnover]
  * @param {number} [accuracyFactor=500] 精度因子
  * @param {number} [range] 计算范围
- * @param {number} [cyq_days] 计算交易天数
+ * @param {number} [days] 计算交易天数
  */
-function CYQCalculator(kdata, accuracyFactor, range, cyq_days) {
+function CostDistributionCalculator(kdata, accuracyFactor, range, days) {
     /**
      * K图数据
      */
@@ -21,14 +21,14 @@ function CYQCalculator(kdata, accuracyFactor, range, cyq_days) {
     /**
      * 计算筹码分布的交易天数
      */
-    this.tradingdays = cyq_days;
+    this.tradingdays = days;
 }
 /**
  * 计算分布及相关指标
  * @param {number} index 当前选中的K线的索引
  * @return {{x: Array.<number>, y: Array.<number>}}
  */
-CYQCalculator.prototype.calc = function (index) {
+CostDistributionCalculator.prototype.calc = function (index) {
     let i;
     let maxprice = 0;
     let minprice = 1000000;
